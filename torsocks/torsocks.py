@@ -6,7 +6,7 @@ Visit http://en.wikipedia.org/wiki/SOCKS#SOCKS5 for details.
 import socket
 import re
 
-ONION = re.compile('^[a-z2-7]{16}\.onion$')
+ONION = re.compile('^[a-z2-7]{56}\.onion$')
 
 def onion_check(host):
     if not isinstance(host, str):
@@ -32,7 +32,7 @@ def create_connection(host_port, tor_host='127.0.0.1', tor_port=9050):
     if response != b'\x05\x00':
         error = 'tor gave you junk: %s tor should be listening at %s:%d'
         raise ValueError(error % (response, tor_host, tor_port))
-    connect_details = bytearray((5, 1, 0, 3, 22))
+    connect_details = bytearray((5, 1, 0, 3, 62))
     connect_details.extend(host.encode('ascii'))
     connect_details.append(port >> 8)
     connect_details.append(port & 0xFF)
