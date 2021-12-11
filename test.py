@@ -2,8 +2,8 @@
 import torsocks
 
 if __name__ == '__main__':
-    hidden_wiki = torsocks.create_connection(('zqktlwi4fecvo6ri.onion', 80))
-    hidden_wiki.sendall(b'GET /wiki/index.php/Main_Page HTTP/1.0\r\n\r\n')
+    hidden_wiki = torsocks.create_connection(('s4k4ceiapwwgcm3mkb6e4diqecpo7kvdnfr5gg7sph7jjppqkvwwqtyd.onion', 80))
+    hidden_wiki.sendall(b'GET / HTTP/1.0\r\n\r\n')
     data = bytearray(200000)
     view = memoryview(data)
     bytes_read = 1
