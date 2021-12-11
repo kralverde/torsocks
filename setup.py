@@ -4,8 +4,8 @@ from distutils.core import setup
 setup(name='torsocks',
       version='1.0',
       description='a tool for using Tor hidden services.',
-      author='Euclid',
-      author_email='torsocks@gmail.com',
-      url='https://github.com/torsocks/torsocks',
+      author='kralverde',
+      author_email='electrum.raven@gmail.com',
+      url='https://github.com/kralverde/torsocks',
       packages=['torsocks'],
 )
